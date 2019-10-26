@@ -1,6 +1,8 @@
 .cocktail-card-thumb {
     /* display: flex; */
-    width: 200px;
+    height: 200px;
+    max-width: 90%;
+    /* flex-grow: initial; */
 }
 .cocktail-card {
     /* display: flex; */
@@ -10,4 +12,23 @@
     margin:10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: oblique;
+    flex-grow: 1;
+    align-content: stretch;
+    background-position: left;
+    filter: grayscale(40%);
+    transition: background-position 10s ease-in, filter 2s ease-in-out;
+}
+.cocktail-card:hover {
+    background-position: right;
+    filter: grayscale(0%);
+    transition: background-position 10s ease-in, filter 2s ease-in-out;
+    /* transition: background-position 10s; */
+    /* transition: filter 2s ease-in-out; */
+}
+
+.cocktail-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
 }

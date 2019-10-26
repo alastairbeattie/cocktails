@@ -21,28 +21,43 @@ const useStyles = makeStyles({
 });
 
 
-
 type CocktailSummaryProps = {
     cocktail: CocktailSummary
 }
 export function CocktailSummaryItem(props:CocktailSummaryProps):JSX.Element {
-    return <Card className="cocktail-card">
-        <img
+    const sectionStyle = {
+        backgroundImage: `url(${props.cocktail.strDrinkThumb})`,
+        backgroundSize: "cover"
+      };
+    
+    return <Card className="cocktail-card"  style={ sectionStyle }>
+        <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+                {props.cocktail.strDrink}
+            </Typography>
+        </CardContent>
+        {/* <img
             className="cocktail-card-thumb"
             src={props.cocktail.strDrinkThumb}
             title="Contemplative Reptile"
-        />
-    <CardActionArea>
-        <Typography gutterBottom variant="h5" component="h2">
-            {props.cocktail.strDrink}
-        </Typography>
-        <CardContent>
-        </CardContent>
+        /> */}
             <Button>More</Button>
-        </CardActionArea>
     </Card>
 }
 export function Cocktail():JSX.Element {
     return <div>A Cocktail</div>
 }
 
+type CocktailListProps = {
+    cocktails:CocktailSummary[]
+}
+export function CocktailList(props:CocktailListProps):JSX.Element {
+    const list = props.cocktails.map( cocktail => {
+        return <CocktailSummaryItem cocktail={cocktail} />
+    })
+    return <div>Cocktails
+        <div className="cocktail-list">
+            {list}
+        </div>
+        </div>
+}

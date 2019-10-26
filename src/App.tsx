@@ -4,7 +4,7 @@ import './App.css';
 import { getCocktailList, CocktailSummary } from './Api';
 
 import Button from '@material-ui/core/Button';
-import { Cocktail, CocktailSummaryItem } from './components/Cocktail';
+import { CocktailList, CocktailSummaryItem } from './components/Cocktail';
 
 type AppState = {
 	cocktailList: CocktailSummary[],
@@ -44,10 +44,7 @@ class App extends React.Component<AppProps, AppState> {
         } else if (this.state.appState === "normal") {
             return (
                 <div className="App">
-                    <Cocktail></Cocktail>
-                    <CocktailSummaryItem cocktail={this.state.cocktailList[0]} />
-                    <CocktailSummaryItem cocktail={this.state.cocktailList[1]} />
-                    <CocktailSummaryItem cocktail={this.state.cocktailList[2]} />
+                    <CocktailList cocktails={this.state.cocktailList} />
                 </div>
             );
         }
