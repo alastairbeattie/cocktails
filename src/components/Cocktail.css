@@ -1,0 +1,13 @@
+.cocktail-card-thumb {
+    /* display: flex; */
+    width: 200px;
+}
+.cocktail-card {
+    /* display: flex; */
+    width: 220px;
+    height: 300px;
+    padding:10px;
+    margin:10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+}
